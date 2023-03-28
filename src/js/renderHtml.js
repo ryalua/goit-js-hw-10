@@ -5,15 +5,15 @@ export default function renderHtml(countries) {
     const countriesList = document.querySelector('.country-list');
     const countryInfo = document.querySelector('.country-info');
     let amountCountries = countries.length;
+    
     let countriesLi = [];
     let countryName = countries[0];
     
-
     if (amountCountries > 10) {
+       
         Notify.info("Too many matches found. Please enter a more specific name.")
-
     } else if(amountCountries >= 2 && amountCountries <= 10) {
-       console.log('от 2 до 10'); 
+    
        countries.map(country => {
         countriesLi += `
             <li class="country-item">
@@ -25,6 +25,7 @@ export default function renderHtml(countries) {
        })
        countryInfo.innerHTML = "";
     } else {
+      
         countryInfo.innerHTML = `
         <div class="info-head">
             <img src="${countryName.flags.svg}" class="flag" alt="flag">
