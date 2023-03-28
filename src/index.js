@@ -17,12 +17,11 @@ function handleInput() {
     if(!countryNameInput) {
         countriesList.innerHTML = "";
         countryInfo.innerHTML = "";
-        console.log('not');
     }
     fetchCountries(countryNameInput)
     .then(countries => {
         renderHtml(countries);
-        console.log(countryNameInput);
+       
     })
     .catch(() => {
         Notify.failure("Oops, there is no country with that name")
