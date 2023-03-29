@@ -17,6 +17,7 @@ function handleInput() {
     if(!countryNameInput) {
         countriesList.innerHTML = "";
         countryInfo.innerHTML = "";
+        return;
     }
     fetchCountries(countryNameInput)
     .then(countries => {
